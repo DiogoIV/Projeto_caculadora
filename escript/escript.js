@@ -1,34 +1,29 @@
 const numerocal = [...document.querySelectorAll('.butao')]
-const som = document.getElementById('som')
-const mult = document.getElementById('mult')
-const sub = document.getElementById('sub')
-const div = document.getElementById('div')
-const res = document.querySelector('#res_calculos')
+const operadores = [...document.querySelectorAll('.butao_especial')]
+const display = document.getElementById('res_calculos')
+const tlimpar = document.getElementsByClassName("cl_butao")[0]
 
-const call = {
-    soma: som.innerHTML,
-    multi: mult.innerHTML,
-    menos: sub.innerHTML,
-    dividir: div.innerHTML
+let limpar = true
 
-}
+numerocal.forEach((el) => {
+    el.addEventListener('click', (event) => {
+        if(limpar) {
+            display.innerHTML = ""
+            limpar = false
+        } else {
+            display.innerHTML += el.textContent
+        }
+        
+    })
+})
 
-class calculadora {
-    constructor(somar, multiplicar, subtrair, dividir) {
-        this.somar = somar
-        this.multiplicar = multiplicar
-        this.subtrair = subtrair 
-        this.dividr = dividir
-    }
-}
+operadores.forEach((el) => {
+    el.addEventListener('click', (event) => {
+        
+        display.innerHTML += event.target.innerHTML
+    })
+})
 
-class calculos extends calculadora {
-    constructor (somar, multiplicar,  subtrair, dividir) {
-        super(somar, multiplicar,  subtrair, dividir)
-    }
-}
-
-const c1 = new calculos(call.soma, call.multi, call.menos, call.dividir)
-
-
-
+tlimpar.addEventListener('click', () => {
+    display.innerHTML = '0'
+})

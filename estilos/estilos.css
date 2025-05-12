@@ -15,29 +15,30 @@ section#conteiner_principal {
     background-color:#d4d2d2;
     border: 2px solid #716f6f;
 
-    height: 210px;
+    height: 246px;
     width: 180px;
 
 }
 
-div{
+div.teclas{
     display: flex;
     align-items: center;
     justify-content: center;
     
 }
 
-div p {
-    width: 100%;
-    text-align: right;
-}
+
 
 section > div#titulo_caculadora {
     padding: 4px;
 }
 #res_calculos{
+    display: flex;
+    flex-flow: row-reverse wrap;
     background-color: rgba(0, 128, 0, 0.292);
 }
+
+
 
 
 
@@ -55,7 +56,7 @@ button {
    background-color: rgba(255, 0, 0, 0.485);
 }
 
-.butao {
+.butao, .cl_butao {
     background-color: rgba(128, 128, 128, 0.424);
     border: 2px solid gray;
 }
