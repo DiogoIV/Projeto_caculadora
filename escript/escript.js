@@ -72,5 +72,5 @@ tigual.addEventListener('click', () => {
 
 
 copy.addEventListener('click', ()=> {
-    
+    navigator.clipboard.writeText(display.innerHTML)
 })
